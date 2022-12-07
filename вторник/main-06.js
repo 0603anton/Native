@@ -44,7 +44,7 @@ const user = {
   friends: ["Alex", "Nick", "John"],
 };
 
-https://www.dev-notes.ru/articles/deep-copying-using-structured-clone/
+// https://www.dev-notes.ru/articles/deep-copying-using-structured-clone/
 
 //1. Поверхностная копия student
 const copyUser = { ...user }; // Object
