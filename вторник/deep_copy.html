@@ -153,7 +153,16 @@
     let man6FullCopy  = {...man6,
         mother:{...man6.mother,
             work:{...man6.mother.work},
-            parents:[...man6.mother.parents.map((el)=>({...el}))]}}
+            parents:[...man6.mother.parents.map((el)=>({...el,
+                favoriteDish: {...el.favoriteDish}}))]}}
+
+    console.log(man6 === man6FullCopy)
+    console.log(man6.mother === man6FullCopy.mother)
+    console.log(man6.mother.parents === man6FullCopy.mother.parents)
+    console.log(man6.mother.parents[0] === man6FullCopy.mother.parents[0])
+    console.log(man6.mother.parents[0].favoriteDish === man6FullCopy.mother.parents[0].favoriteDish)
+
+
 
 
     //10 Array of objects inside an object -> object -> array -> object ->  object
@@ -195,6 +204,22 @@
         }
     };
 
-    let man7FullCopy  //  your code
+    let man7FullCopy = {...man7,
+        mother:{...man7.mother,
+            work:{...man7.mother.work},
+            parents:[...man7.mother.parents.map((par)=> ({...par,
+                favoriteDish:{...par.favoriteDish,
+                    ingredients:[...par.favoriteDish.ingredients.map((ingredient)=>({...ingredient}))]}}))]}} // уровень объекта родителей
+
+    console.log(man7 === man7FullCopy)
+    console.log(man7.mother === man7FullCopy.mother)
+    console.log(man7.mother.parents[0] === man7FullCopy.mother.parents[0])
+    console.log(man7.mother.parents[0].favoriteDish === man7FullCopy.mother.parents[0].favoriteDish)
+    console.log(man7.mother.parents[0].favoriteDish.ingredients === man7FullCopy.mother.parents[0].favoriteDish.ingredients)
+    console.log(man7.mother.parents[0].favoriteDish.ingredients[0] === man7FullCopy.mother.parents[0].favoriteDish.ingredients[0])
+    console.log(man7.mother.parents[0].favoriteDish.ingredients[0].title === man7FullCopy.mother.parents[0].favoriteDish.ingredients[0].title)
+
+    console.log(man7)
+    console.log(man7FullCopy)
 
 </script>
